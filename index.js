@@ -26,7 +26,7 @@ const secret = config.db.SECRET,
 	database = process.env.DATABASE,
 	connstring = 'mongodb://' + secret + '@' + ip + '/' + database;
 
-console.log(connstring);
+//console.log(connstring);
 
 mongoose.connect(connstring, {useNewUrlParser: true}, function (error) {
   if (error) {
