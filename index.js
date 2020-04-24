@@ -20,7 +20,7 @@ app.use(cookieParser());
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-const secret = config.db.SECRET,
+const secret = config.db.SECRET || process.env.USER + ':' + process.env.PASSWORD,
 	ip = process.env.IP,
 	port = process.env.PORT,
 	database = process.env.DATABASE,
