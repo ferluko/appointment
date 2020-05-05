@@ -11,7 +11,7 @@ const express = require('express'),
 
 //const propPath = process.env.PROPPATH;
 //const config = require(propPath);
-const secret = process.env.MONGODB_USERNAME + ':' + process.env.MONGODB_PASSWORD;
+//const secret = process.env.MONGODB_USERNAME + ':' + process.env.MONGODB_PASSWORD;
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -20,7 +20,7 @@ app.use(cookieParser());
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-const secret = config.db.SECRET || process.env.MONGODB_USERNAME + ':' + process.env.MONGODB_PASSWORD,
+const secret = process.env.MONGODB_USERNAME + ':' + process.env.MONGODB_PASSWORD || process.env.MONGODB_USERNAME + ':' + process.env.MONGODB_PASSWORD,
 	ip = process.env.IP,
 	port = process.env.PORT,
 	database = process.env.MONGODB_DATABASE,
